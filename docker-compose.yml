@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mariadb:latest  # Corregido de 'lastest' a 'latest'
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+    networks:
+      - test-network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadminbackend
+    restart: always
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_USER: test
+      PMA_PASSWORD: test
+    ports:
+      - "8080:80"
+    networks:
+      - test-network
+
+networks:
+  test-network:
+    driver: bridge  # Opcional: especifica el driver de red
