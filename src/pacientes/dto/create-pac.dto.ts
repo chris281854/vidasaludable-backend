@@ -29,6 +29,9 @@ export class CreatePacDto {
 
     @IsString()
     estado: string;
+
+    @IsString()
+    userNamepac: string;
    
 
    

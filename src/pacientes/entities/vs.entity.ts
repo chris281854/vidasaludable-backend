@@ -40,6 +40,9 @@ export class Paciente {
     @Column({name:"fecha_modificacion", type: 'timestamp', onUpdate: 'CURRENT_TIMESTAMP', nullable: true })
     modificacion: Date;
 
+    @Column({name: "user_name_pac"})
+    userNamepac: string;
+
 
     @OneToMany(() => Detallepaciente, detallepaciente => detallepaciente.paciente, {
       eager: true,
