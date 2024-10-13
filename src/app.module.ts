@@ -13,7 +13,7 @@ dotenv.config(); // Carga las variables de entorno
     ConfigModule.forRoot({
     isGlobal: true,
     }),
-    PacModule,
+    
     TypeOrmModule.forRoot({
       type: "mariadb",
       host: 'localhost',
@@ -23,6 +23,8 @@ dotenv.config(); // Carga las variables de entorno
       database: 'test',
       autoLoadEntities: true,
       synchronize: true,
+       
+       
       // ssl: process.env.POSTGRES_SSL === "true",
       // extra: {
       //   ssl:
@@ -33,6 +35,7 @@ dotenv.config(); // Carga las variables de entorno
       //       : null,
       // },
     }),
+    PacModule,
     DetallepacientesModule,
     UsersModule,
     AuthModule,

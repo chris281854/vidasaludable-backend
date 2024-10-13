@@ -34,3 +34,30 @@ services:
 networks:
   test-network:
     driver: bridge  # Opcional: especifica el driver de red
+
+
+# version: "3.8"
+# services:
+#   postgresDB:
+#     image: postgres:14.1-alpine
+#     restart: always
+#     environment:
+#       - POSTGRES_USER=postgres
+#       - POSTGRES_PASSWORD=postgres
+#       - POSTGRES_DB=vsemprendedor2
+#     volumes:
+#       - ./postgres:/var/lib/postgresql/data
+#     ports:
+#       - "5436:5432"
+
+#   pgadmin:
+#     image: dpage/pgadmin4
+#     restart: always
+#     ports:
+#       - "5050:80"
+#     depends_on:
+#       - postgresDB
+#     environment:
+#       PGADMIN_DEFAULT_EMAIL: "postgres@postgres.com"
+#       PGADMIN_DEFAULT_PASSWORD: "postgres"
+
