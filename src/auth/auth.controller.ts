@@ -2,7 +2,7 @@ import { Body, Controller, Get, HttpCode, HttpStatus, Post } from '@nestjs/commo
 import { AuthService } from './auth.service';
 import { RegisterDto } from './dto/register-dto';
 import { LoginDto } from './dto/loging-dto';
-import { UsersService } from "../users/users.service";
+import { UsersService } from "../Apis/users/users.service";
 import { Role } from '../common/enums/rol.enums';
 import { Auth } from './decorators/auth.decorators';
 import { ActiveUser } from '../common/decorators/active-user.decorators';

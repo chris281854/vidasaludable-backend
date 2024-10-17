@@ -4,6 +4,7 @@
 /build
 mysql
 .env
+postgress
 
 # Logs
 logs

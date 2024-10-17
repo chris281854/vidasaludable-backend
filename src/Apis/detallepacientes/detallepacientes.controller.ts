@@ -2,10 +2,10 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { DetallepacientesService } from './detallepacientes.service';
 import { CreateDetallepacienteDto } from './dto/create-detallepaciente.dto';
 import { UpdateDetallepacienteDto } from './dto/update-detallepaciente.dto';
-import { Role } from '../common/enums/rol.enums';
-import { Auth } from '../auth/decorators/auth.decorators';
-import { ActiveUser } from '../common/decorators/active-user.decorators';
-import { ActiveUserInterface } from '../common/interfaces/user-active.interface';
+import { Role } from '../../common/enums/rol.enums';
+import { Auth } from '../../auth/decorators/auth.decorators';
+import { ActiveUser } from '../../common/decorators/active-user.decorators';
+import { ActiveUserInterface } from '../../common/interfaces/user-active.interface';
 import { ApiAcceptedResponse, ApiBadRequestResponse, ApiBearerAuth, ApiCreatedResponse, ApiForbiddenResponse, ApiNotFoundResponse, ApiOkResponse, ApiTags, ApiUnauthorizedResponse } from '@nestjs/swagger';
 
 

@@ -1,5 +1,5 @@
 import { IsDateString, IsEmail, IsString } from "class-validator";
-import { Role } from "../../common/enums/rol.enums";
+import { Role } from "../../../common/enums/rol.enums";
 import { Column, DeleteDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 

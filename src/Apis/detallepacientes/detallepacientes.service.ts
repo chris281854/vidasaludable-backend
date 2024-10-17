@@ -4,14 +4,19 @@ import { UpdateDetallepacienteDto } from './dto/update-detallepaciente.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Detallepaciente } from './entities/detallepaciente.entity';
-import { ActiveUserInterface } from '../common/interfaces/user-active.interface';
-import { Role } from '../common/enums/rol.enums';
+import { ActiveUserInterface } from '../../common/interfaces/user-active.interface';
+import { Role } from '../../common/enums/rol.enums';
+
 
 @Injectable()
 export class DetallepacientesService {
 
+  constructor(
+    
   @InjectRepository(Detallepaciente)
   private readonly detallepacienteRepository: Repository<Detallepaciente>
+  ){}
+
 
   async create(createDetallepacienteDto: CreateDetallepacienteDto,
     user: ActiveUserInterface,

@@ -4,8 +4,8 @@ import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Paciente } from './entities/vs.entity';
 import { Detallepaciente } from '../detallepacientes/entities/detallepaciente.entity';
-import { ActiveUserInterface } from '../common/interfaces/user-active.interface';
-import { Role } from '../common/enums/rol.enums';
+import { ActiveUserInterface } from '../../common/interfaces/user-active.interface';
+import { Role } from '../../common/enums/rol.enums';
 import { UpdatePacDto } from './dto/update-pac.dto';
 
 
@@ -85,7 +85,7 @@ export class PacienteService {
   }
   
   private validateOwnership(paciente: Paciente, user: ActiveUserInterface) {
-    if (user.role !== Role.ADMIN) {
+    if (user.role !== Role.ADMIN && paciente.userNamepac !== user.name) {
       // Validamos si el paciente tiene detalles con el nombre del usuario
       const isOwner = paciente.detallepaciente.some(detalle => detalle.userName === user.name);
   

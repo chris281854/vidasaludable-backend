@@ -7,7 +7,7 @@ import {
   
   import { JwtService } from "@nestjs/jwt";
   import * as bcryptjs from "bcryptjs";
-  import { UsersService } from "../users/users.service";
+  import { UsersService } from "../Apis/users/users.service";
   import { LoginDto } from "../auth//dto/loging-dto";
 @Injectable()
 export class AuthService {

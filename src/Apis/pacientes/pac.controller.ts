@@ -2,10 +2,10 @@ import { Controller, Get,  Post, Body, Patch, Param, Delete } from '@nestjs/comm
 import { PacienteService } from './paciente.service';
 import { CreatePacDto } from './dto/create-pac.dto';
 import { UpdatePacDto } from './dto/update-pac.dto';
-import { Auth } from '../auth/decorators/auth.decorators';
-import { Role } from '../common/enums/rol.enums';
-import { ActiveUser } from '../common/decorators/active-user.decorators';
-import { ActiveUserInterface } from '../common/interfaces/user-active.interface';
+import { Auth } from '../../auth/decorators/auth.decorators';
+import { Role } from '../../common/enums/rol.enums';
+import { ActiveUser } from '../../common/decorators/active-user.decorators';
+import { ActiveUserInterface } from '../../common/interfaces/user-active.interface';
 import { ApiAcceptedResponse, ApiBadRequestResponse, ApiCreatedResponse, ApiForbiddenResponse, ApiNotFoundResponse, ApiOkResponse, ApiTags, ApiUnauthorizedResponse } from '@nestjs/swagger';
 import { ApiBearerAuth } from '@nestjs/swagger';
 
@@ -81,11 +81,10 @@ export class PacController {
   
 
   @Auth(Role.ADMIN)
-  @Delete(':rup')
-  @ApiCreatedResponse({ description: 'El paciente fue actualizado satisfactoriamente.'})
+  @Delete(':id')
+  @ApiCreatedResponse({ description: 'El registro fue eliminado satisfactoriamente.'})
   @ApiForbiddenResponse({ description: 'No se encuenta el recurso.'})
   @ApiBadRequestResponse()
-  @ApiUnauthorizedResponse()
   remove(
     @Param('rup') rup: string,
     @ActiveUser()
