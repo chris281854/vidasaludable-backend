@@ -33,7 +33,7 @@ export class AuthService {
     return {
         token: token,
         name: user.name,
-        //role: user.role,
+        role: user.role,
     };
        
    
